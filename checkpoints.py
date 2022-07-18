@@ -31,6 +31,7 @@ Input: [5, 0, 3, 6] ; Output: 3
 class Solution:
     # this is an exploit
     def longestdistance(self, checkpoints):
+        checkpoints.append(0)
         for ia, itema in enumerate(checkpoints):
             greater = 0
             for itemb in checkpoints:
