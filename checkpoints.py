@@ -31,14 +31,16 @@ Input: [5, 0, 3, 6] ; Output: 3
 class Solution:
     # this is an exploit
     def longestdistance(self, checkpoints):
-        for i in range(1, len(checkpoints)):
-            key = checkpoints[i]
-            j = i-1
-        while j >=0 and key < checkpoints[j] :
-                checkpoints[j+1] = checkpoints[j]
-                j -= 1
-        checkpoints[j+1] = key
+        for ia, itema in enumerate(checkpoints):
+            greater = 0
+            for itemb in checkpoints:
+                if itema > itemb:
+                    greater+=1
+            x = checkpoints[greater]
+            checkpoints[greater] = itema
+            checkpoints[ia] = x
         retval = 0
+        print(checkpoints)
         for ia, itema in enumerate(checkpoints):
             if not ia >= len(checkpoints)-1:
                 if checkpoints[ia+1] - itema > retval:
