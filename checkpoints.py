@@ -40,7 +40,6 @@ class Solution:
             checkpoints[greater] = itema
             checkpoints[ia] = x
         retval = 0
-        print(checkpoints)
         for ia, itema in enumerate(checkpoints):
             if not ia >= len(checkpoints)-1:
                 if checkpoints[ia+1] - itema > retval:
